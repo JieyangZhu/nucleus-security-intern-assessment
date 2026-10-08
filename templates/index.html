@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="calculator" aria-labelledby="calculator-title">
+      <h1 id="calculator-title">Calculator</h1>
+
+      <section class="display" aria-live="polite" aria-atomic="true">
+        <p id="expression" class="expression">&nbsp;</p>
+        <output id="result" class="result">0</output>
+      </section>
+
+      <p id="status" class="status" role="status"></p>
+
+      <div class="keys" aria-label="Calculator keypad">
+        <button type="button" class="key key--utility" data-action="clear">AC</button>
+        <button type="button" class="key key--utility" data-action="delete" aria-label="Delete last digit">DEL</button>
+        <button type="button" class="key key--operator" data-operator="/" aria-label="Divide">÷</button>
+        <button type="button" class="key key--operator" data-operator="*" aria-label="Multiply">×</button>
+
+        <button type="button" class="key" data-value="7">7</button>
+        <button type="button" class="key" data-value="8">8</button>
+        <button type="button" class="key" data-value="9">9</button>
+        <button type="button" class="key key--operator" data-operator="-" aria-label="Subtract">−</button>
+
+        <button type="button" class="key" data-value="4">4</button>
+        <button type="button" class="key" data-value="5">5</button>
+        <button type="button" class="key" data-value="6">6</button>
+        <button type="button" class="key key--operator" data-operator="+" aria-label="Add">+</button>
+
+        <button type="button" class="key" data-value="1">1</button>
+        <button type="button" class="key" data-value="2">2</button>
+        <button type="button" class="key" data-value="3">3</button>
+        <button type="button" class="key key--equals" data-action="equals" aria-label="Calculate result">=</button>
+
+        <button type="button" class="key key--zero" data-value="0">0</button>
+        <button type="button" class="key" data-value=".">.</button>
+      </div>
+
+      <p class="keyboard-hint">Keyboard: 0–9, +, −, ×, ÷, Enter, Backspace and Escape</p>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  </body>
+</html>
+
